@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+
+  "name": "Filter Facebook Feed",
+  "description": "This extension allows you to filter feed posts based on content",
+  "version": "0.1",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_title": "Filter Feed"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*.facebook.com/*",
+        "https://*.facebook.com/*"
+      ],
+      "js": ["filter.js"],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ]
+}
+
